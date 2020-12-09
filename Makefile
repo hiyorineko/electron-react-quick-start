@@ -1,11 +1,9 @@
 up:
-	docker-compose up -d
-	@webpack-build
+	docker-compose up -d; docker-compose exec app yarn run build
 build:
 	docker-compose build --no-cache --force-rm
 init:
-	docker-compose up -d --build
-	@webpack-build
+	docker-compose up -d --build; docker-compose exec app yarn run build
 remake:
 	@make destroy
 	@make init
@@ -28,8 +26,6 @@ logs-watch:
 	docker-compose logs --follow
 log-app:
 	docker-compose logs app
-npm:
-	@make npm-install
 yarn:
 	docker-compose exec app yarn
 app-build:

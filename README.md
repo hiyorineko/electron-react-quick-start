@@ -9,9 +9,13 @@ $ cd electron-react-quick-start
 $ make init
 ```
 
-### container up
+### container
 ```bash
+## container up
 $ make up
+
+## container down
+$ make down
 ```
 
 ## application-build
